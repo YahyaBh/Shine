@@ -5,7 +5,7 @@
 <div id="register-bg">
     <div class="form-register">
         <div class="form-container">
-            <div name="logo">
+            <div class="logo" name="logo">
                 <img src="{{ asset('Client/Images/logo.png') }}" alt="logo" width="120px">
             </div>
 
@@ -15,31 +15,27 @@
                 @csrf
 
                 <div>
-                    <label for="name" value="{{ __('Name') }}">
-                        <input id="name" class="block mt-1 w-full" type="text" name="name"
-                            :value="old('name')" required autofocus autocomplete="name" />
+                        <input id="username" class="input-auth" type="text" name="name"
+                            :value="old('username')" required autofocus placeholder="Username" autocomplete="username" />
                 </div>
 
-                <div class="mt-4">
-                    <label for="email" value="{{ __('Email') }}"></label>
-                    <input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
+                <div >
+                    <input id="email" class="input-auth" type="email" name="email" placeholder="Email address" :value="old('email')"
                         required />
                 </div>
 
-                <div class="mt-4">
-                    <label for="password" value="{{ __('Password') }}"></label>
-                    <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                        autocomplete="new-password" />
+                <div >
+                    <input id="password" class="input-auth" type="password" name="password" required
+                        autocomplete="new-password" placeholder="Password" />
                 </div>
 
-                <div class="mt-4">
-                    <label for="password_confirmation" value="{{ __('Confirm Password') }}"></label>
-                    <input id="password_confirmation" class="block mt-1 w-full" type="password"
-                        name="password_confirmation" required autocomplete="new-password" />
+                <div >
+                    <input id="password_confirmation" class="input-auth" type="password"
+                        name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password" />
                 </div>
 
                 @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                    <div class="mt-4">
+                    <div >
                         <x-jet-label for="terms">
                             <div class="flex items-center">
                                 <x-jet-checkbox name="terms" id="terms" required />
@@ -65,15 +61,15 @@
                     </div>
                 @endif
 
-                <div class="flex items-center justify-end mt-4">
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                        {{ __('Already registered?') }}
-                    </a>
-
-                    <button class="ml-4">
+                <div class="items-float-right">
+                    <button class="register-btn">
                         {{ __('Register') }}
                     </button>
+                    <a class="already-registered-txt" href="{{ route('login') }}">
+                        {{ __('Already registered?') }}
+                    </a>
                 </div>
+                
             </form>
         </div>
     </div>

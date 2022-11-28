@@ -2,8 +2,11 @@
 
 use Illuminate\Support\Facades\Facade;
 
+
 return [
 
+
+    'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -159,6 +162,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+        Darryldecode\Cart\CartServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
